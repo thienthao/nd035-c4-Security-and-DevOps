@@ -83,6 +83,14 @@ public class UserControllerTest {
     }
 
     @Test
+    public void test_findByUserName_return_not_found() {
+        when(userRepository.findByUsername(anyString())).thenReturn(null);
+        ResponseEntity<User> response = userController.findByUserName("Test");
+        assertNotNull(response);
+        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    }
+
+    @Test
     public void test_findById_success() {
         when(userRepository.findById(anyLong())).thenReturn(Optional.of(createUser()));
         ResponseEntity<User> response = userController.findById(1L);
@@ -93,6 +101,14 @@ public class UserControllerTest {
         assertNotNull(user);
         assertEquals(1, user.getId());
         assertEquals("Test", user.getUsername());
+    }
+
+    @Test
+    public void test_findById_return_not_found() {
+        when(userRepository.findById(anyLong())).thenReturn(Optional.empty());
+        ResponseEntity<User> response = userController.findById(1L);
+        assertNotNull(response);
+        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
     }
 
     private User createUser() {
