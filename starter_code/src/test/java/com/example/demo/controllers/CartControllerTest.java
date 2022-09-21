@@ -17,6 +17,8 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Optional;
 
+import static com.example.demo.TestUtils.createItem;
+import static com.example.demo.TestUtils.createUser;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.ArgumentMatchers.anyLong;
@@ -153,22 +155,5 @@ public class CartControllerTest {
         ResponseEntity<Cart> response = cartController.removeFromCart(request);
         assertNotNull(response);
         assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
-    }
-
-    private User createUser() {
-        User user = new User();
-        user.setId(1L);
-        user.setUsername("Test");
-        user.setCart(new Cart());
-        return user;
-    }
-
-    private Item createItem() {
-        Item item = new Item();
-        item.setId(1L);
-        item.setDescription("Item's description");
-        item.setName("Item's name");
-        item.setPrice(new BigDecimal(22));
-        return item;
     }
 }

@@ -8,11 +8,11 @@ import org.junit.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
+import static com.example.demo.TestUtils.createItem;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.ArgumentMatchers.anyLong;
@@ -91,19 +91,9 @@ public class ItemControllerTest {
 
     @Test
     public void test_getItemsByName_return_not_found() {
-        Item existedItem = createItem();
         when(itemRepository.findByName(anyString())).thenReturn(Collections.emptyList());
         ResponseEntity<List<Item>> response = itemController.getItemsByName("Item's name");
         assertNotNull(response);
         assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
-    }
-
-    private Item createItem() {
-        Item item = new Item();
-        item.setId(1L);
-        item.setDescription("Item's description");
-        item.setName("Item's name");
-        item.setPrice(new BigDecimal(22));
-        return item;
     }
 }

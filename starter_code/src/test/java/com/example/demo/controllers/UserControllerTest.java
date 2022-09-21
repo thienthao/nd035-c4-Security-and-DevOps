@@ -13,6 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.Optional;
 
+import static com.example.demo.TestUtils.createUser;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.ArgumentMatchers.anyLong;
@@ -46,7 +47,7 @@ public class UserControllerTest {
         request.setPassword("password");
         request.setConfirmPassword("password");
 
-        ResponseEntity<User> response =  userController.createUser(request);
+        ResponseEntity<User> response = userController.createUser(request);
         assertNotNull(response);
         assertEquals(HttpStatus.OK, response.getStatusCode());
 
@@ -64,7 +65,7 @@ public class UserControllerTest {
         request.setPassword("pass");
         request.setConfirmPassword("pass");
 
-        ResponseEntity<User> response =  userController.createUser(request);
+        ResponseEntity<User> response = userController.createUser(request);
         assertNotNull(response);
         assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
     }
@@ -109,12 +110,5 @@ public class UserControllerTest {
         ResponseEntity<User> response = userController.findById(1L);
         assertNotNull(response);
         assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
-    }
-
-    private User createUser() {
-        User user = new User();
-        user.setId(1L);
-        user.setUsername("Test");
-        return user;
     }
 }
