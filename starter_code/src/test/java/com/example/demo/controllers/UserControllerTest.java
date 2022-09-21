@@ -78,7 +78,7 @@ public class UserControllerTest {
 
         User user = response.getBody();
         assertNotNull(user);
-        assertEquals(1, user.getId());
+        assertEquals(1L, user.getId());
         assertEquals("Test", user.getUsername());
     }
 
@@ -99,7 +99,7 @@ public class UserControllerTest {
 
         User user = response.getBody();
         assertNotNull(user);
-        assertEquals(1, user.getId());
+        assertEquals(1L, user.getId());
         assertEquals("Test", user.getUsername());
     }
 
@@ -113,7 +113,7 @@ public class UserControllerTest {
 
     private User createUser() {
         User user = new User();
-        user.setId(1);
+        user.setId(1L);
         user.setUsername("Test");
         return user;
     }
