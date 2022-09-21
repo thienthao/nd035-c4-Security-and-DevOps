@@ -51,14 +51,20 @@ public class UserController {
         Cart cart = new Cart();
 
         if (createUserRequest.getPassword() == null ||
-                createUserRequest.getPassword().length() < 7 ||
-                !createUserRequest.getPassword().equals(createUserRequest.getConfirmPassword())) {
+                createUserRequest.getPassword().length() < 7) {
+            logger.error("Password is less than 7 characters!");
             return ResponseEntity.badRequest().build();
         }
+        if (!createUserRequest.getPassword().equals(createUserRequest.getConfirmPassword())) {
+            logger.error("Confirm password does not matched!");
+            return ResponseEntity.badRequest().build();
+        }
+
         user.setPassword(bCryptPasswordEncoder.encode(createUserRequest.getPassword()));
         user.setCart(cart);
         cartRepository.save(cart);
         userRepository.save(user);
+        logger.info("User created with id: {}", user.getId());
         return ResponseEntity.ok(user);
     }
 }
