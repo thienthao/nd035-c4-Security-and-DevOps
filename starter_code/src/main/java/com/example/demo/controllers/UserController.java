@@ -56,7 +56,7 @@ public class UserController {
             return ResponseEntity.badRequest().build();
         }
         if (!createUserRequest.getPassword().equals(createUserRequest.getConfirmPassword())) {
-            logger.error("Confirm password does not matched!");
+            logger.error("Confirm password does not match!");
             return ResponseEntity.badRequest().build();
         }
 
