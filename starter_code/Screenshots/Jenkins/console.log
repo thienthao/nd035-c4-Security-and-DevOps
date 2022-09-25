@@ -1,0 +1,181 @@
+Started by user admin
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/Udacity_Ecommerce_App
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+[WS-CLEANUP] Done
+The recommended git tool is: NONE
+using credential 776313c0-eaf2-4b7f-aae9-24204ddd9ade
+Cloning the remote Git repository
+Cloning repository https://github.com/thienthao/nd035-c4-Security-and-DevOps.git
+ > git init /var/jenkins_home/workspace/Udacity_Ecommerce_App # timeout=10
+Fetching upstream changes from https://github.com/thienthao/nd035-c4-Security-and-DevOps.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.36.2'
+using GIT_SSH to set credentials 
+Verifying host key using known hosts file
+You're using 'Known hosts file' strategy to verify ssh host keys, but your known_hosts file does not exist, please go to 'Manage Jenkins' -> 'Configure Global Security' -> 'Git Host Key Verification Configuration' and configure host key verification.
+ > git fetch --tags --force --progress -- https://github.com/thienthao/nd035-c4-Security-and-DevOps.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/thienthao/nd035-c4-Security-and-DevOps.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision 7f1294da80463ef0893bf1e782f9c784a9f2dfab (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 7f1294da80463ef0893bf1e782f9c784a9f2dfab # timeout=10
+Commit message: "Fix typo"
+ > git rev-list --no-walk 7f1294da80463ef0893bf1e782f9c784a9f2dfab # timeout=10
+[Udacity_Ecommerce_App] $ mvn -f starter_code/pom.xml clean compile package
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.example:auth-course >-----------------------
+[INFO] Building auth-course 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ auth-course ---
+[INFO] Deleting /var/jenkins_home/workspace/Udacity_Ecommerce_App/starter_code/target
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ auth-course ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ auth-course ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 20 source files to /var/jenkins_home/workspace/Udacity_Ecommerce_App/starter_code/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ auth-course ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ auth-course ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 20 source files to /var/jenkins_home/workspace/Udacity_Ecommerce_App/starter_code/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ auth-course ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/Udacity_Ecommerce_App/starter_code/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ auth-course ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /var/jenkins_home/workspace/Udacity_Ecommerce_App/starter_code/target/test-classes
+[INFO] /var/jenkins_home/workspace/Udacity_Ecommerce_App/starter_code/src/test/java/com/example/demo/TestUtils.java: /var/jenkins_home/workspace/Udacity_Ecommerce_App/starter_code/src/test/java/com/example/demo/TestUtils.java uses or overrides a deprecated API.
+[INFO] /var/jenkins_home/workspace/Udacity_Ecommerce_App/starter_code/src/test/java/com/example/demo/TestUtils.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ auth-course ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.example.demo.controllers.CartControllerTest
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/root/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/root/.m2/repository/org/slf4j/slf4j-log4j12/1.7.25/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
+06:49:05.218 [main] INFO com.example.demo.controllers.CartController - Item removed from cart.
+06:49:05.251 [main] ERROR com.example.demo.controllers.CartController - Cannot find user with username: Unknown User
+06:49:05.255 [main] ERROR com.example.demo.controllers.CartController - Cannot find user with username: Unknown User
+06:49:05.256 [main] ERROR com.example.demo.controllers.CartController - Cannot find item with itemId: 1
+06:49:05.257 [main] INFO com.example.demo.controllers.CartController - Item added with itemId: 1.
+06:49:05.258 [main] ERROR com.example.demo.controllers.CartController - Cannot find item with itemId: 1
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.129 s - in com.example.demo.controllers.CartControllerTest
+[INFO] Running com.example.demo.controllers.OrderControllerTest
+06:49:05.358 [main] INFO com.example.demo.controllers.OrderController - Order successfully submitted for userId: 1
+06:49:05.360 [main] ERROR com.example.demo.controllers.OrderController - Cannot find user with username: Test
+06:49:05.360 [main] ERROR com.example.demo.controllers.OrderController - Cannot find user with username: Test
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.046 s - in com.example.demo.controllers.OrderControllerTest
+[INFO] Running com.example.demo.controllers.UserControllerTest
+06:49:05.421 [main] INFO com.example.demo.controllers.UserController - User name set with: username
+06:49:05.422 [main] INFO com.example.demo.controllers.UserController - User created with id: 0
+06:49:05.424 [main] INFO com.example.demo.controllers.UserController - User name set with: username
+06:49:05.425 [main] ERROR com.example.demo.controllers.UserController - Password is less than 7 characters!
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 s - in com.example.demo.controllers.UserControllerTest
+[INFO] Running com.example.demo.controllers.ItemControllerTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in com.example.demo.controllers.ItemControllerTest
+[INFO] Running com.example.demo.ApplicationTests
+06:49:05.487 [main] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class com.example.demo.ApplicationTests]
+06:49:05.489 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+06:49:05.511 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+06:49:05.549 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.example.demo.ApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+06:49:05.580 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.demo.ApplicationTests], using SpringBootContextLoader
+06:49:05.591 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.example.demo.ApplicationTests]: class path resource [com/example/demo/ApplicationTests-context.xml] does not exist
+06:49:05.592 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.example.demo.ApplicationTests]: class path resource [com/example/demo/ApplicationTestsContext.groovy] does not exist
+06:49:05.592 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.example.demo.ApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+06:49:05.593 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.demo.ApplicationTests]: ApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+06:49:05.686 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.example.demo.ApplicationTests]
+06:49:05.825 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/var/jenkins_home/workspace/Udacity_Ecommerce_App/starter_code/target/classes/com/example/demo/Application.class]
+06:49:05.827 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.demo.Application for test class com.example.demo.ApplicationTests
+06:49:05.961 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.example.demo.ApplicationTests]: using defaults.
+06:49:05.962 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+06:49:05.996 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@a64e035, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4d74c3ba, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@41c204a0, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@64138b0c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@49dbaaf3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@22d9c961, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@736f3e9e, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@bdc8014, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1f443fae, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@73ba6fe6, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@79ab34c1, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@1698d7c0]
+06:49:05.998 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.example.demo.ApplicationTests]
+06:49:05.999 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.example.demo.ApplicationTests]
+06:49:05.999 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.example.demo.ApplicationTests]
+06:49:05.999 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.example.demo.ApplicationTests]
+06:49:05.999 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.example.demo.ApplicationTests]
+06:49:05.999 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.example.demo.ApplicationTests]
+06:49:06.003 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@71870da7 testClass = ApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6dd91637 testClass = ApplicationTests, locations = '{}', classes = '{class com.example.demo.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@2f6bbeb0, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@64711bf2, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@181d7f28, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@5b989dc7], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+06:49:06.003 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.example.demo.ApplicationTests]
+06:49:06.003 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.example.demo.ApplicationTests]
+06:49:06.028 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.5.RELEASE)
+
+2022-09-25 06:49:06.657  INFO 2433 --- [           main] com.example.demo.ApplicationTests        : Starting ApplicationTests on dc50e89649b5 with PID 2433 (started by root in /var/jenkins_home/workspace/Udacity_Ecommerce_App/starter_code)
+2022-09-25 06:49:06.658  INFO 2433 --- [           main] com.example.demo.ApplicationTests        : No active profile set, falling back to default profiles: default
+2022-09-25 06:49:07.843  INFO 2433 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-09-25 06:49:08.039  INFO 2433 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 132ms. Found 4 repository interfaces.
+2022-09-25 06:49:08.889  INFO 2433 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4e3bfc43] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-25 06:49:09.201  INFO 2433 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-25 06:49:09.459  INFO 2433 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-25 06:49:09.595  INFO 2433 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2022-09-25 06:49:09.800  INFO 2433 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2022-09-25 06:49:09.802  INFO 2433 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2022-09-25 06:49:09.885  INFO 2433 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2022-09-25 06:49:10.126  INFO 2433 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-25 06:49:11.139  INFO 2433 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-25 06:49:12.392  WARN 2433 --- [           main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-25 06:49:12.555  INFO 2433 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4027edeb, org.springframework.security.web.context.SecurityContextPersistenceFilter@4a7c72af, org.springframework.security.web.header.HeaderWriterFilter@639cb0c8, org.springframework.web.filter.CorsFilter@48cd8e71, org.springframework.security.web.authentication.logout.LogoutFilter@ed1d2cf, com.example.demo.security.JWTAuthenticationFilter@43b3b1b0, com.example.demo.security.JWTAuthenticationVerificationFilter@2f6d8c9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3293030b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@263e512e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7d4135c9, org.springframework.security.web.session.SessionManagementFilter@5382a35f, org.springframework.security.web.access.ExceptionTranslationFilter@35451ba6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5c65fa69]
+2022-09-25 06:49:13.068  INFO 2433 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-09-25 06:49:13.389  INFO 2433 --- [           main] com.example.demo.ApplicationTests        : Started ApplicationTests in 7.32 seconds (JVM running for 9.837)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.973 s - in com.example.demo.ApplicationTests
+2022-09-25 06:49:13.451  INFO 2433 --- [       Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-09-25 06:49:13.453  INFO 2433 --- [       Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-25 06:49:13.463  INFO 2433 --- [       Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-25 06:49:13.468  INFO 2433 --- [       Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 22, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- maven-war-plugin:3.2.2:war (default-war) @ auth-course ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [auth-course] in [/var/jenkins_home/workspace/Udacity_Ecommerce_App/starter_code/target/auth-course-0.0.1-SNAPSHOT]
+[INFO] Processing war project
+[INFO] Webapp assembled in [329 msecs]
+[INFO] Building war: /var/jenkins_home/workspace/Udacity_Ecommerce_App/starter_code/target/auth-course-0.0.1-SNAPSHOT.war
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.1.5.RELEASE:repackage (repackage) @ auth-course ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  19.976 s
+[INFO] Finished at: 2022-09-25T06:49:16Z
+[INFO] ------------------------------------------------------------------------
+[DeployPublisher][INFO] Attempting to deploy 1 war file(s)
+[DeployPublisher][INFO] Deploying /var/jenkins_home/workspace/Udacity_Ecommerce_App/starter_code/target/auth-course-0.0.1-SNAPSHOT.war to container Tomcat 9.x Remote with context myApp
+  [/var/jenkins_home/workspace/Udacity_Ecommerce_App/starter_code/target/auth-course-0.0.1-SNAPSHOT.war] is not deployed. Doing a fresh deployment.
+  Deploying [/var/jenkins_home/workspace/Udacity_Ecommerce_App/starter_code/target/auth-course-0.0.1-SNAPSHOT.war]
+Finished: SUCCESS
