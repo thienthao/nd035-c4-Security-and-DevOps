@@ -51,7 +51,7 @@ public class CartController {
         IntStream.range(0, request.getQuantity())
                 .forEach(i -> cart.addItem(item.get()));
         cartRepository.save(cart);
-        logger.info("Item added with itemId: {}.", item.get().getId());
+        logger.info("Item added with itemId: {}", item.get().getId());
         return ResponseEntity.ok(cart);
     }
 
